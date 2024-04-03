@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,500&family=Hind+Siliguri:wght@300;400;500;600;700&family=Kanit:ital ,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Madimi+One&family= Nunito:ital,que@ 0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --primary-font: "Hind Siliguri", sans-serif;
+    --weight-font: 500;
+}
+
+/* =========== vital sign styles =========== */
+.vital_signs_body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--primary-font);
+    font-weight: var(--weight-font);
+    background-color: #B9B9B9;
+}
+
+.title {
+    padding: 1.25rem;
+    text-align: center;
+    font-size: 3.125rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0.625rem 2.5rem;
+    padding: 1.438rem 1.063rem;
+    border-radius: 1.25rem;
+    background-color: #fff;
+    gap: 1rem;
+}
+
+.vital_card {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+    height: 18rem;
+    gap: 1.875rem;
+    background-color: green;
+    border-radius: 2.5rem;
+    justify-content: flex-start;
+    filter: drop-shadow(0rem 0.625rem 0.625rem #CDCDCE);
+}
+
+.vital_card_title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.vital_card_numbers {
+    font-size: 1.875rem;
+}
+
+.bpm {
+    background-color: #FFE0D9;
+    color: #FF0000;
+}
+
+.fr {
+    background-color: #DCD9FF;
+    color: #1400FF;
+}
+
+.temp {
+    background-color: #D9FFE4;
+    color: #00FF47;
+}
+
+.pa {
+    background-color: #EAC696;
+    color: #65451F;
+}
+
+
+.sat {
+    background-color: #E7E9DE;
+    color: #626060;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+}
+
+.clinical_history_content {
+    width: 100%;
+    height: 37.5rem;
+    background-color: #fff;
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    justify-content: center;
+    font-size: 1.875rem;
+    font-weight: 500;
+    letter-spacing: 0.125rem;
+}
+
+/* =========== registration page styles =========== */
+.index__body {
+    font-family: var(--primary-font);
+    font-weight: var(--weight-font);
+}
+
+.form_container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_login_doctor {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 2rem;
+    align-items: center;
+    gap: 2rem;
+    width: 35rem;
+    height: 35rem;
+    border: transparent;
+    box-shadow: rgba(149, 157, 165, 0.2) 0rem 0rem 1.5rem;
+    border-radius: 1rem;
+}
+
+.input_text {
+    background-color: #fff;
+    width: 80%;
+}
+
+.input_text>input {
+    padding: 4%;
+    width: 100%;
+}
+
+.line{
+    margin: -0.2px;
+}
+
+.input_login{
+    background-color: #0078F0;
+    padding: 0.625rem;
+    border-radius: 0.625rem;
+    width: 15rem;
+    cursor: pointer;
+    margin-top: 9.375rem;
+}
+
+
+/* =========== patient page styles =========== */
+
+.patients_body{
+    display: flex;
+    flex-direction: column;
+    font-family: var(--primary-font);
+    font-weight: var(--weight-font);
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 0.2rem;
+}
+
+.patient_list_title{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.patient_container{
+    width: 100%;
+    height: 80vh;
+    box-shadow: 0px 0px 23px;
+    border-radius: 15px;
+}
+
+.patient{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.patient_name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-shadow: 0px 0px 1px;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.pulse{
+    width: 50px;
+    height: 30px;
+    background-color: #00FF47;
+}
+
+.no_pulse{
+    background-color: #FF0000;
+}
