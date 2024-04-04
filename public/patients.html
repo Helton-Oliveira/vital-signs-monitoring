@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +11,14 @@
     <header class="patient_list_container">
         <h1 class="patient_list_title">Patients</h1>
     </header>
-    <section class="patient_container">
-        <div class="patient">
-            <a href="vitalSigns.html?name=" class="patient_name">Name...
-                <img src="/public/img/pulse.svg" alt="" class="pulse">
-            </a>
-            <a href="vitalSigns.html?name=" class="patient_name">Name...
-                <img src="/public/img/no-pulse.png" class="pulse no_pulse">
-            </a>
-            <a href="vitalSigns.html?name=" class="patient_name">Name...</a>
+    <section class="patient_container" >
+        <div class="patient" id="patient_list">
+            <!-- <a href="vitalSigns.html?name=" class="patient_name" id="patient-name">Name...</a> -->
         </div>
 
     </section>  
+
+    <script src="socket.io/socket.io.js"></script>
+    <script src="src/patients.js" type="module"></script>
 </body>
 </html>

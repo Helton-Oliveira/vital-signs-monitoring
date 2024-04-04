@@ -3,10 +3,16 @@ class Service {
         this.entity = entity
     }
 
-    static getAll = () => {
-      const data =  this.entity.find({}).toArray();
-
+    getAll = () => {
+      const data = this.entity.find({}).toArray();
+      
       return data;
+    }
+
+    getOne = async (data) => {
+      const user = await this.entity.findOne({...data});
+
+      return user;
     }
 }
 

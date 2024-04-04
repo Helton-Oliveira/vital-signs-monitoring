@@ -5,6 +5,7 @@ class Doctor extends Service{
     constructor() {
         super(doctors);
     };
+
 };
 
 export default Doctor;

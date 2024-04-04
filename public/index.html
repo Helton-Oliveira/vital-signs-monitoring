@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +12,13 @@
         <div>
             <h1 class="title">Welcome Doctor</h1>
         </div>
-        <form action="" class="form_login_doctor">
+        <form action="" class="form_login_doctor" id="form_login">
             <div class="input_text">
-                <input type="text"  placeholder="e-mail">
+                <input type="text"  placeholder="Name" id="email">
                 <hr class="line">
             </div>
             <div class="input_text">
-                <input type="text"  placeholder="Password">
+                <input type="text"  placeholder="CRM" id="crm">
                 <hr class="line">
             </div>
             <div>
@@ -26,5 +26,8 @@
             </div>
         </form>
     </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/src/index.js" type="module"></script>
 </body>
 </html>
