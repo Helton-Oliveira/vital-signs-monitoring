@@ -10,14 +10,11 @@
 <body class="vital_signs_body">
     <h1 class="title">Patient Daily Readings (Patient Name) </h1>
     <header>
-        <div class="vital_card bpm">
-            <h3 class="vital_card_title">BPM</h3>
-            <span class="vital_card_numbers">80.5</span>
-        </div>
-        <div class="vital_card fr"></div>
-        <div class="vital_card temp"></div>
-        <div class="vital_card pa"></div>
-        <div class="vital_card sat"></div>
+        <div class="vital_card bpm" id="vital_card_container"></div>
+        <div class="vital_card fr" id="vital_card_container"></div>
+        <div class="vital_card temp" id="vital_card_container"></div>
+        <div class="vital_card pa" id="vital_card_container"></div>
+        <div class="vital_card sat" id="vital_card_container"></div>
     </header>
 
     <section>
@@ -28,5 +25,6 @@
     </section>
 
     <script src="/socket.io/socket.io.js"></script>
+    <script src="src/viltaSigns.js" type="module"></script>
 </body>
 </html>

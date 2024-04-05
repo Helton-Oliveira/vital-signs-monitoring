@@ -3,7 +3,7 @@ const divList = document.getElementById('patient_list');
 
 function editList(data) {
     divList.innerHTML +=  ` 
-        <a href="vitalSigns.html?name="${data.name}" class="patient_name" id="patient-name">${data.name}</a>
+        <a href="vitalSigns.html?name=${data.name}&age=${data.age}" class="patient_name" id="patient-name">${data.name}</a>
     `
 };
 
