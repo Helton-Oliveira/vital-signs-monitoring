@@ -17,16 +17,29 @@ io.on('connection', (socket) => {
         const patients = await patientServices.getAll();
 
         return response(patients);
+    });
+
+    socket.on('obtain_patient', async({ namePatient }, returnText) => {
+        const patient = await patientServices.getOne({name: namePatient});
+
+        returnText(patient.complaint);
     })
 
-    socket.on('show_vital_signs', ({ namePatient, agePatient }) => {
+    socket.on('show_vital_signs', async({ namePatient, agePatient }) => {
         socket.join(namePatient);
 
         setInterval(() => {
-            io.emit('generates_data', generator(agePatient));
-        }, 1000);
+            io.to(namePatient).emit('generates_data', generator(agePatient));
+        }, 10000);
     });
+    
+    socket.on('edit_medical_record', async (updatedText) => {
+       const textUpdated = await patientServices.updateMeidcalRecord(updatedText);
 
+       if(textUpdated.modifiedCount) {
+           socket.to(updatedText.name).emit('edit_text_area', updatedText.text);
+       }
+    })
 });
 
 function generator(age) { 
@@ -37,6 +50,5 @@ function generator(age) {
         temp: VitalSigns.temperatureGenerate(),
         sat: VitalSigns.saturationGenerator(),
     }
-
     return signals;
 }

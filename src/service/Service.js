@@ -14,6 +14,12 @@ class Service {
 
       return user;
     }
+
+    updated = async (data) => {
+      const updateItem = await this.entity.updateOne({...data})
+
+      return updateItem;
+    }
 }
 
 export default Service;

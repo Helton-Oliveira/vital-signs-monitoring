@@ -1,25 +1,41 @@
 const socket = io();
 const divSignals = document.querySelectorAll('#vital_card_container');
+const textArea = document.getElementById('history_patient');
 
 const params = new URLSearchParams(window.document.location.search);
-const nameUser = params.get('name');
-const ageUser = params.get('age')
+const namePatient = params.get('name');
+const agePatient = params.get('age')
 
 const user = {
-    nameUser,
-    ageUser
+    namePatient,
+    agePatient
 }
 
-const urlActual = window.document.URL.toString()
+console.log(user);
 
-if (urlActual.includes('/vitalSigns.html')) {
+socket.emit('obtain_patient', user, (text) => {
+    updateText(text);
+});
 
-    socket.emit('show_vital_signs', user);
+socket.emit('show_vital_signs', user);
 
-    socket.on('generates_data', (signals) => {
-        showingVitalSigns(signals);
-    })
-}
+socket.on('generates_data', (signals) => {
+    showingVitalSigns(signals);
+})
+
+textArea.addEventListener('keyup', () => {
+    const updatedText = {
+        name: namePatient,
+        text: textArea.value,
+    };
+    socket.emit('edit_medical_record', updatedText);
+})
+
+socket.on('edit_text_area', (text) => {
+    console.log(text)
+    updateText(text);
+})
+
 
 
 
@@ -33,6 +49,10 @@ function showingVitalSigns(event) {
                <span class="vital_card_numbers">${values[i]}</span>
            `
     })
+}
+
+function updateText(text) {
+    textArea.value = text
 }
 
 
